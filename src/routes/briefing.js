@@ -1,100 +1,108 @@
+// src/routes/briefing.js
 const express = require('express');
 const router = express.Router();
-const { computeResearchWindow } = require('../utils/date');
-const { searchRecentDevelopments } = require('../services/tavily');
 const { generateVerifiedBriefing } = require('../services/briefingGenerator');
+const { computeResearchWindow } = require('../utils/date');
+const fs = require('fs');
+const path = require('path');
+
+// Directory to store persisted briefings
+const BRIEFINGS_DIR = path.join(__dirname, '../../data/briefings');
+if (!fs.existsSync(BRIEFINGS_DIR)) {
+  fs.mkdirSync(BRIEFINGS_DIR, { recursive: true });
+}
 
 /**
  * POST /api/briefing
- * End-to-end Pre-Meeting Briefing Pipeline
- * 1. Validates inputs & calculates 30-day research window
- * 2. Executes targeted web research with Tavily
- * 3. Synthesizes & verifies briefing with Bifrost Gateway
- * 4. Returns structured one-page briefing for Canva UI
+ * Generates a briefing and saves it for later retrieval.
+ * Returns { success:true, data:{ id, ...briefing } }
  */
-router.post('/briefing', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const { subject, meetingDate, meetingTime } = req.body;
+    const windowInfo = computeResearchWindow(meetingDate);
+    const rawArticles = await require('../services/tavily').searchRecentDevelopments(subject, windowInfo);
+    const briefing = await generateVerifiedBriefing(subject, windowInfo, rawArticles);
 
-    // 1. Input Validation
-    if (!subject || typeof subject !== 'string' || subject.trim().length === 0) {
-      return res.status(400).json({
-        success: false,
-        errorTitle: 'Missing Name',
-        error: 'Please enter a valid company name or individual name to research.'
-      });
+    // Persist the briefing – simple timestamp id
+    const id = Date.now().toString();
+    const filePath = path.join(BRIEFINGS_DIR, `${id}.json`);
+    fs.writeFileSync(filePath, JSON.stringify({ id, subject, meetingDate, meetingTime, createdAt: new Date().toISOString(), briefing }, null, 2));
+
+    res.json({ success: true, data: { id, ...briefing } });
+  } catch (err) {
+    console.error('[Briefing route] Error:', err);
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+/**
+ * GET /api/briefings/history
+ * Returns an array of saved briefings (id, subject, meetingDate, createdAt)
+ */
+router.get('/history', (req, res) => {
+  try {
+    const files = fs.readdirSync(BRIEFINGS_DIR).filter(f => f.endsWith('.json'));
+    const list = files.map(f => {
+      const content = JSON.parse(fs.readFileSync(path.join(BRIEFINGS_DIR, f), 'utf8'));
+      return { id: content.id, subject: content.subject, meetingDate: content.meetingDate, createdAt: content.createdAt };
+    }).sort((a, b) => b.createdAt.localeCompare(a.createdAt));
+    res.json({ success: true, data: list });
+  } catch (err) {
+    console.error('[Briefings history] Error:', err);
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+/**
+ * GET /api/briefings/download/:id
+ * Streams the selected briefing as a PDF.
+ */
+router.get('/download/:id', (req, res) => {
+  try {
+    const { id } = req.params;
+    const filePath = path.join(BRIEFINGS_DIR, `${id}.json`);
+    if (!fs.existsSync(filePath)) {
+      return res.status(404).json({ success: false, error: 'Briefing not found' });
     }
+    const content = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    const PDFDocument = require('pdfkit');
+    const doc = new PDFDocument({ margin: 40, size: 'A4' });
+    res.setHeader('Content-Type', 'application/pdf');
+    res.setHeader('Content-Disposition', `attachment; filename="${content.subject}_briefing_${id}.pdf"`);
+    doc.pipe(res);
 
-    if (!meetingDate) {
-      return res.status(400).json({
-        success: false,
-        errorTitle: 'Missing Meeting Date',
-        error: 'Please select your scheduled meeting date.'
-      });
-    }
+    const heading = (txt, size = 20) => { doc.moveDown().fontSize(size).fillColor('#183B56').text(txt, { underline: true }); };
+    const sub = (txt, size = 14) => { doc.moveDown().fontSize(size).fillColor('#4F83CC').text(txt); };
+    const normal = (txt) => { doc.moveDown().fontSize(12).fillColor('#333333').text(txt); };
 
-    // 2. Compute 30-day research window
-    let windowInfo;
-    try {
-      windowInfo = computeResearchWindow(meetingDate, meetingTime);
-    } catch (dateErr) {
-      return res.status(400).json({
-        success: false,
-        errorTitle: 'Invalid Schedule',
-        error: dateErr.message || 'Please check the scheduled meeting date and time.'
-      });
-    }
+    heading('Pre‑Meeting Briefing');
+    normal(`Subject: ${content.subject}`);
+    normal(`Meeting: ${content.meetingDate} ${content.meetingTime}`);
+    normal(`Generated on: ${new Date(content.createdAt).toLocaleString()}`);
 
-    const trimmedSubject = subject.trim();
+    heading('Executive Summary');
+    content.briefing.executiveSummary.forEach(t => normal(t));
 
-    // 3. Web Research via Tavily (strict 30 days)
-    let rawArticles;
-    try {
-      rawArticles = await searchRecentDevelopments(trimmedSubject, windowInfo);
-    } catch (searchErr) {
-      console.error('[BriefingRoute] Tavily search error:', searchErr.message);
-      return res.status(502).json({
-        success: false,
-        errorTitle: 'Research Provider Error',
-        error: searchErr.message || 'Unable to connect to Tavily. Please check your TAVILY_API_KEY in .env.'
-      });
-    }
-
-    // 4. Handle empty search results gracefully
-    if (!rawArticles || rawArticles.length === 0) {
-      return res.status(404).json({
-        success: false,
-        errorTitle: 'No Recent Coverage Found',
-        error: `We couldn't find source-linked coverage for "${trimmedSubject}" in the 30 days before this meeting (${windowInfo.windowLabel}). Try a more specific name or verify that public news is available.`
-      });
-    }
-
-    // 5. Bifrost Gateway Analysis & Factual Verification
-    let briefingData;
-    try {
-      briefingData = await generateVerifiedBriefing(trimmedSubject, windowInfo, rawArticles);
-    } catch (synthesisErr) {
-      console.error('[BriefingRoute] Synthesis error:', synthesisErr.message);
-      return res.status(500).json({
-        success: false,
-        errorTitle: 'Briefing Generation Failed',
-        error: 'An error occurred while synthesizing the briefing report. Please try again.'
-      });
-    }
-
-    // 6. Return verified, structured briefing
-    return res.status(200).json({
-      success: true,
-      data: briefingData
+    heading('Key Developments');
+    content.briefing.developments.forEach(dev => {
+      sub(`${dev.title} (${dev.date})`);
+      normal(`${dev.category} – ${dev.relevance}`);
+      normal(dev.summary);
     });
 
-  } catch (error) {
-    console.error('[BriefingRoute] Unexpected error:', error);
-    return res.status(500).json({
-      success: false,
-      errorTitle: 'Internal Server Error',
-      error: 'An unexpected internal error occurred. Please try again.'
+    heading('Suggested Discussion Points');
+    content.briefing.discussionPoints.forEach(p => normal(p));
+
+    heading('Sources');
+    content.briefing.sources.forEach(src => {
+      normal(`${src.title} – ${src.site} – ${src.publishedDate}`);
     });
+
+    doc.end();
+  } catch (err) {
+    console.error('[Briefing download] Error:', err);
+    res.status(500).json({ success: false, error: err.message });
   }
 });
 
