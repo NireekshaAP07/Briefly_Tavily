@@ -1,0 +1,180 @@
+{
+  "id": "1795103524587",
+  "subject": "tavily",
+  "meetingDate": "2026-11-20",
+  "meetingTime": "10:00",
+  "createdAt": "2026-11-19T15:52:04.587Z",
+  "briefing": {
+    "subject": "tavily",
+    "meetingDateFormatted": "Nov 20, 2026",
+    "meetingTimeFormatted": "10:00 AM",
+    "windowLabel": "Oct 21, 2026 – Nov 20, 2026 (30 days)",
+    "overview": "Pre-meeting briefing for tavily scheduled for Nov 20, 2026 at 10:00 AM. Synthesizes public news and releases from the 30-day window between Oct 21, 2026 and Nov 20, 2026.",
+    "executiveSummary": [
+      "Strategic Partnership: Tavily: The Web Access Layer for AI Agents, Explained (Nov 13, 2026) — On February 10, 2026, Nebius announced an agreement to acquire Tavily.",
+      "Developer & Technical Update: Tavily Review 2026: Search Quality, Formats and Pricing for AI Agents (Oct 28, 2026) — | Tavily (October 2026) | | What it is | Search and extraction API built for LLMs and agents | | Ownership | Acquired by Nebius (announced February 2026); the dashboard now reads “Tavily by Nebius” | |...",
+      "AI & Product Update: Tavily Review: Pros, Cons, Pricing & Verdict - Jan Tegze (Oct 22, 2026) — Can I use Tavily in Claude or ChatGPT? Yes.",
+      "Strategic Partnership: [Hiring] Enterprise Account Executive @Nebius (Nov 15, 2026) — You will partner with engineering leaders, AI teams, product organizations, and executive stakeholders to help them leverage Tavily’s AI-powered search and data capabilities."
+    ],
+    "developments": [
+      {
+        "title": "Tavily: The Web Access Layer for AI Agents, Explained",
+        "summary": "On February 10, 2026, Nebius announced an agreement to acquire Tavily.  Nebius didn’t disclose the price; Globes, citing Bloomberg, reported $275 million.",
+        "category": "Partnership & Alliances",
+        "relevance": "High",
+        "date": "Nov 13, 2026",
+        "status": "verified",
+        "source": {
+          "title": "Tavily: The Web Access Layer for AI Agents, Explained",
+          "url": "https://www.usecarly.com/blog/tavily",
+          "site": "usecarly.com",
+          "publishedDate": "Nov 13, 2026"
+        },
+        "evidence": "On February 10, 2026, Nebius announced an agreement to acquire Tavily. Nebius didn’t disclose the price; Globes, citing Bloomberg, reported $275 million. Nebius said Tavily would keep its brand and customers, with Weiss and the team continuing to lead the product, and positioned it alongside Nebius Token Factory, its hosted model service, so..."
+      },
+      {
+        "title": "Tavily Review 2026: Search Quality, Formats and Pricing for AI Agents",
+        "summary": "| Tavily (October 2026) | | What it is | Search and extraction API built for LLMs and agents | | Ownership | Acquired by Nebius (announced February 2026); the dashboard now reads “Tavily by Nebius” | |...",
+        "category": "Developer Ecosystem / Technical Discussion",
+        "relevance": "High",
+        "date": "Oct 28, 2026",
+        "status": "verified",
+        "source": {
+          "title": "Tavily Review 2026: Search Quality, Formats and Pricing for AI Agents",
+          "url": "https://gologin.com/blog/tavily-review",
+          "site": "gologin.com",
+          "publishedDate": "Oct 28, 2026"
+        },
+        "evidence": "| Tavily (October 2026) | | What it is | Search and extraction API built for LLMs and agents | | Ownership | Acquired by Nebius (announced February 2026); the dashboard now reads “Tavily by Nebius” | | Endpoints | Search, Extract, Map, Crawl, Research | | Output | Structured JSON results + optional page content as Markdown or plain text | | Search..."
+      },
+      {
+        "title": "Tavily Review: Pros, Cons, Pricing & Verdict - Jan Tegze",
+        "summary": "Can I use Tavily in Claude or ChatGPT? Yes. Tavily runs a remote MCP server that connects to Claude, Claude Code, ChatGPT, Cursor and VS Code, so you can search and extract pages in chat without writing...",
+        "category": "AI & Product Updates",
+        "relevance": "Medium",
+        "date": "Oct 22, 2026",
+        "status": "verified",
+        "source": {
+          "title": "Tavily Review: Pros, Cons, Pricing & Verdict - Jan Tegze",
+          "url": "https://jantegze.com/tools/tavily",
+          "site": "jantegze.com",
+          "publishedDate": "Oct 22, 2026"
+        },
+        "evidence": "### Can I use Tavily in Claude or ChatGPT? Yes. Tavily runs a remote MCP server that connects to Claude, Claude Code, ChatGPT, Cursor and VS Code, so you can search and extract pages in chat without writing code. ### Who owns Tavily? Nebius Group, the Amsterdam-based AI cloud company, agreed to buy Tavily in February 2026. Tavily keeps its brand..."
+      },
+      {
+        "title": "[Hiring] Enterprise Account Executive @Nebius",
+        "summary": "You will partner with engineering leaders, AI teams, product organizations, and executive stakeholders to help them leverage Tavily’s AI-powered search and data capabilities.  This role is ideal for...",
+        "category": "Partnership & Alliances",
+        "relevance": "Medium",
+        "date": "Nov 15, 2026",
+        "status": "verified",
+        "source": {
+          "title": "[Hiring] Enterprise Account Executive @Nebius",
+          "url": "https://remotive.com/remote/jobs/sales/enterprise-account-executive-6343590",
+          "site": "remotive.com",
+          "publishedDate": "Nov 15, 2026"
+        },
+        "evidence": "You will partner with engineering leaders, AI teams, product organizations, and executive stakeholders to help them leverage Tavily’s AI-powered search and data capabilities. This role is ideal for someone who thrives in a fast-paced startup environment, enjoys building pipeline, and can navigate complex enterprise sales cycles from initial..."
+      },
+      {
+        "title": "Head of Strategic Partnerships, Tavily at [Hidden Company]",
+        "summary": "United States $302K - $377K per year 5-10 years experience insurance cloud training leadership negotiation partnerships Apply Now Please mention DailyRemote when applying [...  ] Apply Now Please mention...",
+        "category": "Product & Company Updates",
+        "relevance": "Low",
+        "date": "Nov 5, 2026",
+        "status": "verified",
+        "source": {
+          "title": "Head of Strategic Partnerships, Tavily at [Hidden Company]",
+          "url": "https://dailyremote.com/remote-job/head-of-strategic-partnerships-tavily-5745106",
+          "site": "dailyremote.com",
+          "publishedDate": "Nov 5, 2026"
+        },
+        "evidence": "Hired at: Tech Startup Applied 2 days after job was posted Sarah J. ### Sarah J. Marketing Manager “I was the first applicant for a remote marketing position that got listed on the company website the same day I applied. Had an interview within 48 hours!” Hired at: Growth Agency $15K salary increase from previous role David T. ### David T. Product..."
+      }
+    ],
+    "insights": [
+      {
+        "headline": "Active Product & Platform Momentum",
+        "takeaway": "tavily recorded announcements across 11 verified publications in the past 30 days, emphasizing AI features and platform improvements."
+      },
+      {
+        "headline": "Discussion Grounding",
+        "takeaway": "All findings are corroborated with original news links. Consult attached citations before addressing sensitive partnership details."
+      }
+    ],
+    "discussionPoints": [
+      "[Strategic Direction] How do the latest AI and platform updates from the past 30 days align with your immediate goals for today's conversation?",
+      "[Execution Milestones] What internal milestones or timeline updates should we anticipate following the recent public announcements?",
+      "[Ecosystem Impact] Are there any unannounced priorities or organizational shifts that complement the public coverage?"
+    ],
+    "sources": [
+      {
+        "title": "Tavily: The Web Access Layer for AI Agents, Explained",
+        "url": "https://www.usecarly.com/blog/tavily",
+        "site": "usecarly.com",
+        "publishedDate": "Nov 13, 2026"
+      },
+      {
+        "title": "Tavily Review 2026: Search Quality, Formats and Pricing for AI Agents",
+        "url": "https://gologin.com/blog/tavily-review",
+        "site": "gologin.com",
+        "publishedDate": "Oct 28, 2026"
+      },
+      {
+        "title": "Tavily Review: Pros, Cons, Pricing & Verdict - Jan Tegze",
+        "url": "https://jantegze.com/tools/tavily",
+        "site": "jantegze.com",
+        "publishedDate": "Oct 22, 2026"
+      },
+      {
+        "title": "[Hiring] Enterprise Account Executive @Nebius",
+        "url": "https://remotive.com/remote/jobs/sales/enterprise-account-executive-6343590",
+        "site": "remotive.com",
+        "publishedDate": "Nov 15, 2026"
+      },
+      {
+        "title": "Head of Strategic Partnerships, Tavily at [Hidden Company]",
+        "url": "https://dailyremote.com/remote-job/head-of-strategic-partnerships-tavily-5745106",
+        "site": "dailyremote.com",
+        "publishedDate": "Nov 5, 2026"
+      },
+      {
+        "title": "Tavily hiring Staff Applied AI Researcher (Agentic Search) • Remote (Work from Home) | Himalayas",
+        "url": "https://himalayas.app/companies/tavily/jobs/staff-applied-ai-researcher-agentic-search",
+        "site": "himalayas.app",
+        "publishedDate": "Nov 6, 2026"
+      },
+      {
+        "title": "Ecosystem Partnerships Engineer (Forward Deployed) job at Tavily in ...",
+        "url": "https://trabajos.univision.com/job/23-14660_4F4FBE74DD3CC4C4CB61F64E19B468A3",
+        "site": "trabajos.univision.com",
+        "publishedDate": "Nov 2, 2026"
+      },
+      {
+        "title": "Tavily Review: Web Search API, Pricing, and Alternatives",
+        "url": "https://www.syntaxdispatch.com/blog/tavily-review",
+        "site": "syntaxdispatch.com",
+        "publishedDate": "Nov 14, 2026"
+      },
+      {
+        "title": "Staff Applied AI Researcher (Agentic Search) at Tavily",
+        "url": "https://jobgether.com/offer/6aeb41b81c8aea01fb813fdd-staff-applied-ai-researcher-agentic-search",
+        "site": "jobgether.com",
+        "publishedDate": "Nov 4, 2026"
+      },
+      {
+        "title": "Tavily in API Search Engine | Hyperresearch Reference",
+        "url": "https://apisearchengine.com/resources/tavily",
+        "site": "apisearchengine.com",
+        "publishedDate": "Nov 8, 2026"
+      },
+      {
+        "title": "Developers became Tavily users before companies ...",
+        "url": "https://x.com/tavilyai/status/2118727712726454305",
+        "site": "x.com",
+        "publishedDate": "Nov 6, 2026"
+      }
+    ]
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "id": "1795103509058",
+  "subject": "apple",
+  "meetingDate": "2026-11-20",
+  "meetingTime": "10:00",
+  "createdAt": "2026-11-19T15:51:49.058Z",
+  "briefing": {
+    "subject": "apple",
+    "meetingDateFormatted": "Nov 20, 2026",
+    "meetingTimeFormatted": "10:00 AM",
+    "windowLabel": "Oct 21, 2026 – Nov 20, 2026 (30 days)",
+    "overview": "Pre-meeting briefing for apple scheduled for Nov 20, 2026 at 10:00 AM. Synthesizes public news and releases from the 30-day window between Oct 21, 2026 and Nov 20, 2026.",
+    "executiveSummary": [
+      "Product Update: Apple Changes Software Development Process as iPhone Duo Apps Expand | Межа (Nov 14, 2026) — source: MacRumors Apple is changing how it develops iOS 28 and macOS 28, while more than 100,000...",
+      "Strategic Partnership: Latest News - Apple Developer (Nov 4, 2026) — Learn more about WWDC26 Apple Developer is now on bilibili and LinkedIn March 17, 2026 Check out Apple Developer on bilibili and LinkedIn to learn about the latest news, announcements, videos, and events...",
+      "Product Update: Apple's Weekly Overview: The Latest News, Updates, and Developments (Oct 21, 2026) — This week's Apple headlines; Apple's launch date confirmation, iPhone 14 Pro Max details leak, Mac self repair program launched, Apple Maps prepares.",
+      "AI & Product Update: Apple unveils groundbreaking MacBook Pro with PROLED XDR Display - Apple (Nov 11, 2026) — ch for the first time on Mac The world’s best pro laptop now features an industry-leading tandem OLED display, an intuitive Touch experience, blazing-fast M5 Pro and M5 Max performance and AI..."
+    ],
+    "developments": [
+      {
+        "title": "Apple Changes Software Development Process as iPhone Duo Apps Expand | Межа",
+        "summary": "source: MacRumors Apple is changing how it develops iOS 28 and macOS 28, while more than 100,000...",
+        "category": "Product & Company Updates",
+        "relevance": "High",
+        "date": "Nov 14, 2026",
+        "status": "uncertain",
+        "source": {
+          "title": "Apple Changes Software Development Process as iPhone Duo Apps Expand | Межа",
+          "url": "https://mezha.net/eng/news/mezha-27df77a41723408f1241b9ae_apple_changes_software",
+          "site": "mezha.net",
+          "publishedDate": "Nov 14, 2026"
+        },
+        "evidence": "Apple recently removed the attach-rate metric for retail employees. The company said the measure is less relevant during the holiday season, when customers are more often buying gifts for others. The timing of the change has drawn attention amid the recent publicity. Apple released iOS 27.2.1 and related updates this week, including security..."
+      },
+      {
+        "title": "Latest News - Apple Developer",
+        "summary": "Learn more about WWDC26 Apple Developer is now on bilibili and LinkedIn March 17, 2026 Check out Apple Developer on bilibili and LinkedIn to learn about the latest news, announcements, videos, and events...",
+        "category": "Partnership & Alliances",
+        "relevance": "High",
+        "date": "Nov 4, 2026",
+        "status": "verified",
+        "source": {
+          "title": "Latest News - Apple Developer",
+          "url": "https://developer.apple.com/news",
+          "site": "developer.apple.com",
+          "publishedDate": "Nov 4, 2026"
+        },
+        "evidence": "Learn more about WWDC26 ## Apple Developer is now on bilibili and LinkedIn March 17, 2026 Check out Apple Developer on bilibili and LinkedIn to learn about the latest news, announcements, videos, and events — including the Worldwide Developers Conference and Meet with Apple activities — for the developer community. Follow on bilibili Follow on..."
+      },
+      {
+        "title": "Apple's Weekly Overview: The Latest News, Updates, and Developments",
+        "summary": "This week's Apple headlines; Apple's launch date confirmation, iPhone 14 Pro Max details leak, Mac self repair program launched, Apple Maps prepares",
+        "category": "Product & Company Updates",
+        "relevance": "Medium",
+        "date": "Oct 21, 2026",
+        "status": "verified",
+        "source": {
+          "title": "Apple's Weekly Overview: The Latest News, Updates, and Developments",
+          "url": "https://www.facebook.com/Wetechsavvy/posts/apples-weekly-overview-the-latest-news-updates-and-developments/1777021471090849",
+          "site": "facebook.com",
+          "publishedDate": "Oct 21, 2026"
+        },
+        "evidence": "This week's Apple headlines; Apple's launch date confirmation, iPhone 14 Pro Max details leak, Mac self repair program launched, Apple Maps prepares"
+      },
+      {
+        "title": "Apple unveils groundbreaking MacBook Pro with PROLED XDR Display - Apple",
+        "summary": "ch for the first time on Mac The world’s best pro laptop now features an industry-leading tandem OLED display, an intuitive Touch experience, blazing-fast M5 Pro and M5 Max performance and AI...",
+        "category": "AI & Product Updates",
+        "relevance": "Medium",
+        "date": "Nov 11, 2026",
+        "status": "verified",
+        "source": {
+          "title": "Apple unveils groundbreaking MacBook Pro with PROLED XDR Display - Apple",
+          "url": "https://www.apple.com/newsroom/2026/10/apple-unveils-groundbreaking-macbook-pro-with-proled-xdr-display",
+          "site": "apple.com",
+          "publishedDate": "Nov 11, 2026"
+        },
+        "evidence": "## Additional New Features for Pro Workflows ## Advanced Pro Connectivity A close-up of the keyboard and ports on MacBook Pro with PROLED XDR Display. ## macOS 27 Golden Gate ## MacBook Pro with PROLED XDR Display and the Environment ## Media Text of this article October 28, 2026 PRESS RELEASE Apple unveils groundbreaking MacBook Pro with PROLED..."
+      },
+      {
+        "title": "Siri AI is now open to all developers - Latest News - Apple Developer",
+        "summary": "View in English Siri AI is now open to all developers November 3, 2026 A Siri AI app icon on a dark gray rounded square, showing a sphere that shades from dark gray at the top to light gray at the bottom,...",
+        "category": "AI & Product Updates",
+        "relevance": "Low",
+        "date": "Nov 3, 2026",
+        "status": "verified",
+        "source": {
+          "title": "Siri AI is now open to all developers - Latest News - Apple Developer",
+          "url": "https://developer.apple.com/news?id=gdk2umrf",
+          "site": "developer.apple.com",
+          "publishedDate": "Nov 3, 2026"
+        },
+        "evidence": "View in English ## Siri AI is now open to all developers November 3, 2026 A Siri AI app icon on a dark gray rounded square, showing a sphere that shades from dark gray at the top to light gray at the bottom, with a ribbon of iridescent light curving across its middle. Starting today with the iOS 27.3, iPadOS 27.3, macOS 27.3, and visionOS 27.3..."
+      }
+    ],
+    "insights": [
+      {
+        "headline": "Active Product & Platform Momentum",
+        "takeaway": "apple recorded announcements across 7 verified publications in the past 30 days, emphasizing AI features and platform improvements."
+      },
+      {
+        "headline": "Discussion Grounding",
+        "takeaway": "All findings are corroborated with original news links. Consult attached citations before addressing sensitive partnership details."
+      }
+    ],
+    "discussionPoints": [
+      "[Strategic Direction] How do the latest AI and platform updates from the past 30 days align with your immediate goals for today's conversation?",
+      "[Execution Milestones] What internal milestones or timeline updates should we anticipate following the recent public announcements?",
+      "[Ecosystem Impact] Are there any unannounced priorities or organizational shifts that complement the public coverage?"
+    ],
+    "sources": [
+      {
+        "title": "Apple Changes Software Development Process as iPhone Duo Apps Expand | Межа",
+        "url": "https://mezha.net/eng/news/mezha-27df77a41723408f1241b9ae_apple_changes_software",
+        "site": "mezha.net",
+        "publishedDate": "Nov 14, 2026"
+      },
+      {
+        "title": "Latest News - Apple Developer",
+        "url": "https://developer.apple.com/news",
+        "site": "developer.apple.com",
+        "publishedDate": "Nov 4, 2026"
+      },
+      {
+        "title": "Apple's Weekly Overview: The Latest News, Updates, and Developments",
+        "url": "https://www.facebook.com/Wetechsavvy/posts/apples-weekly-overview-the-latest-news-updates-and-developments/1777021471090849",
+        "site": "facebook.com",
+        "publishedDate": "Oct 21, 2026"
+      },
+      {
+        "title": "Apple unveils groundbreaking MacBook Pro with PROLED XDR Display - Apple",
+        "url": "https://www.apple.com/newsroom/2026/10/apple-unveils-groundbreaking-macbook-pro-with-proled-xdr-display",
+        "site": "apple.com",
+        "publishedDate": "Nov 11, 2026"
+      },
+      {
+        "title": "Siri AI is now open to all developers - Latest News - Apple Developer",
+        "url": "https://developer.apple.com/news?id=gdk2umrf",
+        "site": "developer.apple.com",
+        "publishedDate": "Nov 3, 2026"
+      },
+      {
+        "title": "Apple Company Profile: History, Founders & Business",
+        "url": "https://the-skillengine.com/apple-company-profile",
+        "site": "the-skillengine.com",
+        "publishedDate": "Nov 11, 2026"
+      },
+      {
+        "title": "Apple: news, key facts and who runs it - techblog.news",
+        "url": "https://techblog.news/company/apple",
+        "site": "techblog.news",
+        "publishedDate": "Nov 13, 2026"
+      }
+    ]
+  }
+}
