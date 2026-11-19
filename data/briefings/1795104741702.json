@@ -1,0 +1,159 @@
+{
+  "id": "1795104741702",
+  "subject": "google",
+  "meetingDate": "2026-11-20",
+  "meetingTime": "10:00",
+  "createdAt": "2026-11-19T16:12:21.702Z",
+  "briefing": {
+    "subject": "google",
+    "meetingDateFormatted": "Nov 20, 2026",
+    "meetingTimeFormatted": "10:00 AM",
+    "windowLabel": "Oct 21, 2026 – Nov 20, 2026 (30 days)",
+    "overview": "Pre-meeting briefing for google scheduled for Nov 20, 2026 at 10:00 AM. Synthesizes public news and releases from the 30-day window between Oct 21, 2026 and Nov 20, 2026.",
+    "executiveSummary": [
+      "AI & Product Update: What Google Cloud announced in AI this month – and how it helps you (Nov 3, 2026) — May We’ve had a busy month!  Between announcing Gemini Spark and Gemini 3.",
+      "AI & Product Update: The latest AI news we announced in October 2026 (Nov 2, 2026) — Share x.",
+      "Product Update: Read This Week’s Digital Marketing News Updates (Oct 30, 2026) — _Image Source: Google_ Google Pics is similar to platforms like Adobe Express or Canva and can create or edit images solely through a text prompt.",
+      "Developer & Technical Update: Google Cloud latest news and announcements (Nov 14, 2026) — Feb 9 - Feb 13 Introducing Gemini 3.1 Pro on Google Cloud."
+    ],
+    "developments": [
+      {
+        "title": "What Google Cloud announced in AI this month – and how it helps you",
+        "summary": "May We’ve had a busy month!  Between announcing Gemini Spark and Gemini 3.",
+        "category": "AI & Product Updates",
+        "relevance": "High",
+        "date": "Nov 3, 2026",
+        "status": "verified",
+        "source": {
+          "title": "What Google Cloud announced in AI this month – and how it helps you",
+          "url": "https://cloud.google.com/blog/products/ai-machine-learning/what-google-cloud-announced-in-ai-this-month",
+          "site": "cloud.google.com",
+          "publishedDate": "Nov 3, 2026"
+        },
+        "evidence": "## May We’ve had a busy month! Between announcing Gemini Spark and Gemini 3.5 at Google I/O – and unveiling Google AI Threat Defense, our latest AI-powered cybersecurity solution, we had a lot to share with Google Cloud customers. Keeping up with the latest news takes time, so we gathered the most important announcements, thought leadership, and..."
+      },
+      {
+        "title": "The latest AI news we announced in October 2026",
+        "summary": "Share x.  comFacebookLinkedInMail Copy link [] Preferences Links Images RSS feed x.",
+        "category": "AI & Product Updates",
+        "relevance": "High",
+        "date": "Nov 2, 2026",
+        "status": "verified",
+        "source": {
+          "title": "The latest AI news we announced in October 2026",
+          "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-october-2026",
+          "site": "blog.google",
+          "publishedDate": "Nov 2, 2026"
+        },
+        "evidence": "For more than 20 years, we’ve invested in machine learning and AI research, tools, and infrastructure to build products that make everyday life better for more people. Teams across Google are working on ways to unlock AI’s benefits in fields as wide-ranging as healthcare, crisis response, and education. To keep you posted on our progress, we're..."
+      },
+      {
+        "title": "Read This Week’s Digital Marketing News Updates",
+        "summary": "_Image Source: Google_ Google Pics is similar to platforms like Adobe Express or Canva and can create or edit images solely through a text prompt.  Users can use it to create presentations, documents, images, and graphics for many purposes.",
+        "category": "Product & Company Updates",
+        "relevance": "Medium",
+        "date": "Oct 30, 2026",
+        "status": "verified",
+        "source": {
+          "title": "Read This Week’s Digital Marketing News Updates",
+          "url": "https://ignitevisibility.com/digital-marketing-news",
+          "site": "ignitevisibility.com",
+          "publishedDate": "Oct 30, 2026"
+        },
+        "evidence": "_Image Source: Google_ Google Pics is similar to platforms like Adobe Express or Canva and can create or edit images solely through a text prompt. Users can use it to create presentations, documents, images, and graphics for many purposes. Powered by Google’s Nano Banana, it is expected to roll out to Google Workspace, Google AI Pro, and Google AI..."
+      },
+      {
+        "title": "Google Cloud latest news and announcements",
+        "summary": "Feb 9 - Feb 13 Introducing Gemini 3.1 Pro on Google Cloud. [...] API Horizon Munich July 6, 2026: Orchestrating the Next Era of AI and APIsMaster the orchestration of next-gen AI and digital ecosystems....",
+        "category": "Developer Ecosystem / Technical Discussion",
+        "relevance": "Medium",
+        "date": "Nov 14, 2026",
+        "status": "verified",
+        "source": {
+          "title": "Google Cloud latest news and announcements",
+          "url": "https://cloud.google.com/blog/topics/inside-google-cloud/whats-new-google-cloud",
+          "site": "cloud.google.com",
+          "publishedDate": "Nov 14, 2026"
+        },
+        "evidence": "### Feb 9 - Feb 13 Introducing Gemini 3.1 Pro on Google Cloud. [...] API Horizon Munich July 6, 2026: Orchestrating the Next Era of AI and APIsMaster the orchestration of next-gen AI and digital ecosystems. Join Google Cloud experts and DACH tech leaders on July 6 for an exclusive look at the Apigee roadmap, Agent Management, and Model Context..."
+      }
+    ],
+    "insights": [
+      {
+        "headline": "Active Product & Platform Momentum",
+        "takeaway": "google recorded announcements across 10 verified publications in the past 30 days, emphasizing AI features and platform improvements."
+      },
+      {
+        "headline": "Discussion Grounding",
+        "takeaway": "All findings are corroborated with original news links. Consult attached citations before addressing sensitive partnership details."
+      }
+    ],
+    "discussionPoints": [
+      "[Strategic Direction] How do the latest AI and platform updates from the past 30 days align with your immediate goals for today's conversation?",
+      "[Execution Milestones] What internal milestones or timeline updates should we anticipate following the recent public announcements?",
+      "[Ecosystem Impact] Are there any unannounced priorities or organizational shifts that complement the public coverage?"
+    ],
+    "sources": [
+      {
+        "title": "What Google Cloud announced in AI this month – and how it helps you",
+        "url": "https://cloud.google.com/blog/products/ai-machine-learning/what-google-cloud-announced-in-ai-this-month",
+        "site": "cloud.google.com",
+        "publishedDate": "Nov 3, 2026"
+      },
+      {
+        "title": "The latest AI news we announced in October 2026",
+        "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-october-2026",
+        "site": "blog.google",
+        "publishedDate": "Nov 2, 2026"
+      },
+      {
+        "title": "Read This Week’s Digital Marketing News Updates",
+        "url": "https://ignitevisibility.com/digital-marketing-news",
+        "site": "ignitevisibility.com",
+        "publishedDate": "Oct 30, 2026"
+      },
+      {
+        "title": "Google Cloud latest news and announcements",
+        "url": "https://cloud.google.com/blog/topics/inside-google-cloud/whats-new-google-cloud",
+        "site": "cloud.google.com",
+        "publishedDate": "Nov 14, 2026"
+      },
+      {
+        "title": "Press Releases",
+        "url": "https://www.googlecloudpresscorner.com/2026-11-1-Google-Funds-US-160-Million-in-Shared-Water-Infrastructure-Alongside-Digital-Infrastructure-Development-in-Negeri-Sembilan",
+        "site": "googlecloudpresscorner.com",
+        "publishedDate": "Nov 1, 2026"
+      },
+      {
+        "title": "5 Big OpenAI Partner Executive Hires From AWS And Google Cloud",
+        "url": "https://www.crn.com/news/ai/2026/5-big-openai-partner-executive-hires-from-aws-and-google-cloud",
+        "site": "crn.com",
+        "publishedDate": "Nov 6, 2026"
+      },
+      {
+        "title": "Netflix Hires Google Cloud Executive Darshan Kantak as VP of Ads Platform - Media Play News",
+        "url": "https://www.mediaplaynews.com/netflix-hires-google-cloud-exec-darshan-kantak-as-vp-of-ads-platform",
+        "site": "mediaplaynews.com",
+        "publishedDate": "Nov 3, 2026"
+      },
+      {
+        "title": "Group Product Manager, AI FinOps and Model Routing — Google Careers",
+        "url": "https://careers.google.com/jobs/results/107690161319355078-group-product-manager",
+        "site": "careers.google.com",
+        "publishedDate": "Nov 16, 2026"
+      },
+      {
+        "title": "Google News",
+        "url": "https://news.google.com?hl=en-US&gl=US&ceid=US%3Aen&nocache=1793755401506",
+        "site": "news.google.com",
+        "publishedDate": "Nov 4, 2026"
+      },
+      {
+        "title": "Global Product GTM Lead, Commercial Strategy @ Google",
+        "url": "https://jobs.technyc.org/companies/google-2-6e248a84-5b9b-4601-aff7-7c2e9e285b9c/jobs/98721775-global-product-gtm-lead-commercial-strategy",
+        "site": "jobs.technyc.org",
+        "publishedDate": "Nov 2, 2026"
+      }
+    ]
+  }
+}

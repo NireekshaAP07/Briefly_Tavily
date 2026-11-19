@@ -25,7 +25,8 @@ app.get('/api/health', (req, res) => {
 });
 
 // API Routes
-app.use('/api', briefingRouter);
+// The router's POST / handler is exposed as the documented /api/briefing endpoint.
+app.use('/api/briefing', briefingRouter);
 
 // Fallback to index.html for any frontend navigation
 app.get('*', (req, res) => {

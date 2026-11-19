@@ -19,8 +19,35 @@ if (!fs.existsSync(BRIEFINGS_DIR)) {
  */
 router.post('/', async (req, res) => {
   try {
-    const { subject, meetingDate, meetingTime } = req.body;
-    const windowInfo = computeResearchWindow(meetingDate);
+    const subject = typeof req.body?.subject === 'string' ? req.body.subject.trim() : '';
+    const meetingDate = typeof req.body?.meetingDate === 'string' ? req.body.meetingDate.trim() : '';
+    const meetingTime = typeof req.body?.meetingTime === 'string' ? req.body.meetingTime.trim() : '';
+
+    if (!subject) {
+      return res.status(400).json({
+        success: false,
+        errorTitle: 'Subject is required',
+        error: 'Enter a company or person name before generating a briefing.'
+      });
+    }
+
+    if (subject.length > 200) {
+      return res.status(400).json({
+        success: false,
+        errorTitle: 'Subject is too long',
+        error: 'Use a company or person name with no more than 200 characters.'
+      });
+    }
+    let windowInfo;
+    try {
+      windowInfo = computeResearchWindow(meetingDate, meetingTime);
+    } catch (validationError) {
+      return res.status(400).json({
+        success: false,
+        errorTitle: 'Invalid meeting details',
+        error: validationError.message
+      });
+    }
     const rawArticles = await require('../services/tavily').searchRecentDevelopments(subject, windowInfo);
     const briefing = await generateVerifiedBriefing(subject, windowInfo, rawArticles);
 
@@ -37,7 +64,7 @@ router.post('/', async (req, res) => {
 });
 
 /**
- * GET /api/briefings/history
+ * GET /api/briefing/history
  * Returns an array of saved briefings (id, subject, meetingDate, createdAt)
  */
 router.get('/history', (req, res) => {
@@ -55,7 +82,31 @@ router.get('/history', (req, res) => {
 });
 
 /**
- * GET /api/briefings/download/:id
+ * GET /api/briefing/:id
+ * Returns one saved briefing for the history viewer.
+ */
+router.get('/:id', (req, res) => {
+  try {
+    const { id } = req.params;
+    if (!/^\d+$/.test(id)) {
+      return res.status(400).json({ success: false, error: 'Invalid briefing id.' });
+    }
+
+    const filePath = path.join(BRIEFINGS_DIR, `${id}.json`);
+    if (!fs.existsSync(filePath)) {
+      return res.status(404).json({ success: false, error: 'Briefing not found' });
+    }
+
+    const content = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    res.json({ success: true, data: { ...content, ...content.briefing } });
+  } catch (err) {
+    console.error('[Briefing retrieval] Error:', err);
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+/**
+ * GET /api/briefing/download/:id
  * Streams the selected briefing as a PDF.
  */
 router.get('/download/:id', (req, res) => {

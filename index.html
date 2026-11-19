@@ -48,6 +48,18 @@
     .primary svg,.secondary svg{width:16px;height:16px}
     .form-card .primary{width:100%}
     .privacy-note{text-align:center;color:#91A0AF;font-size:12px;margin:22px auto 0}
+    .header-actions{display:flex;align-items:center;gap:12px}
+    .history-link{border:1px solid #D6E6F8;background:#fff;color:var(--navy);border-radius:9px;padding:9px 13px;font-weight:600;display:inline-flex;align-items:center;gap:7px}
+    .history-link:hover{background:var(--soft)}
+    .history-card{max-width:690px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 16px 45px rgba(24,59,86,.055);padding:30px}
+    .history-card h2{margin:0 0 6px;color:var(--navy);font-size:22px}
+    .history-card .sub{color:var(--muted);margin:0 0 22px;font-size:13px}
+    .history-list{display:grid;gap:10px}
+    .history-item{width:100%;text-align:left;border:1px solid var(--line);background:#fff;border-radius:11px;padding:14px 16px;color:var(--navy);display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .history-item:hover{border-color:#9FC1E6;background:var(--soft)}
+    .history-item strong{display:block;font-size:14px}
+    .history-item span{display:block;color:var(--muted);font-size:12px;margin-top:4px}
+    .history-empty{padding:24px 0;color:var(--muted);text-align:center}
     .hidden{display:none!important}
     .loading-card{text-align:center;padding:48px 35px}
     .loading-icon{margin:0 auto 23px;background:var(--soft);color:var(--blue);height:56px;width:56px;border-radius:16px;display:grid;place-items:center}
@@ -163,7 +175,8 @@
    <div class="header-inner">
     <div class="brand" aria-label="Briefly">
      <span class="brand-mark"><i data-lucide="align-left"></i></span><span>Briefly<span style="color:#4F83CC">.</span></span>
-    </div><span class="tagline canva-text">Walk into every meeting prepared.</span>
+     </div><span class="tagline canva-text">Walk into every meeting prepared.</span>
+     <div class="header-actions"><button id="history-button" class="history-link" type="button"><i data-lucide="history" style="width:15px;height:15px"></i> History</button></div>
    </div>
   </header>
   <main id="main-content">
@@ -210,6 +223,14 @@
      <p id="message-body"></p><button id="try-again" type="button" class="secondary canva-button"><i data-lucide="arrow-left"></i> Back to search</button>
     </div>
    </section>
+    <section id="history-screen" class="hidden canva-section" aria-live="polite">
+     <div class="history-card canva-card">
+      <h2>Search history</h2>
+      <p class="sub">Reopen a briefing you generated earlier.</p>
+      <div id="history-list" class="history-list"></div>
+      <button id="history-back" type="button" class="secondary canva-button"><i data-lucide="arrow-left"></i> Back to search</button>
+     </div>
+    </section>
    <section id="report-screen" class="report-shell hidden canva-section">
     <div class="report-toolbar">
      <div>
@@ -285,7 +306,7 @@
   </main>
   <script>
     const $ = id => document.getElementById(id);
-    const screens = ['input-screen','loading-screen','message-screen','report-screen'];
+    const screens = ['input-screen','loading-screen','message-screen','history-screen','report-screen'];
     
     function show(id){
       screens.forEach(s => $(s).classList.toggle('hidden', s !== id));
@@ -303,6 +324,65 @@
       $('message-title').textContent = title;
       $('message-body').textContent = body;
       show('message-screen');
+    }
+
+    async function loadHistory(){
+      const list = $('history-list');
+      list.replaceChildren();
+      const loading = document.createElement('div');
+      loading.className = 'history-empty';
+      loading.textContent = 'Loading saved briefings…';
+      list.appendChild(loading);
+      show('history-screen');
+
+      try {
+        const response = await fetch('/api/briefing/history');
+        const result = await response.json();
+        if (!response.ok || !result.success) throw new Error(result.error || 'Unable to load search history.');
+        list.replaceChildren();
+        if (!result.data.length) {
+          const empty = document.createElement('div');
+          empty.className = 'history-empty';
+          empty.textContent = 'No saved briefings yet. Generate one to see it here.';
+          list.appendChild(empty);
+          return;
+        }
+
+        result.data.forEach(item => {
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.className = 'history-item';
+          const details = document.createElement('span');
+          const subject = document.createElement('strong');
+          subject.textContent = item.subject || 'Untitled briefing';
+          const meta = document.createElement('span');
+          meta.textContent = `${item.meetingDate || 'Date not set'} · ${new Date(item.createdAt).toLocaleString()}`;
+          details.append(subject, meta);
+          const icon = document.createElement('i');
+          icon.setAttribute('data-lucide', 'chevron-right');
+          button.append(details, icon);
+          button.addEventListener('click', () => openSavedBriefing(item.id));
+          list.appendChild(button);
+        });
+        if (window.lucide) lucide.createIcons();
+      } catch (err) {
+        list.replaceChildren();
+        const error = document.createElement('div');
+        error.className = 'history-empty';
+        error.textContent = err.message;
+        list.appendChild(error);
+      }
+    }
+
+    async function openSavedBriefing(id){
+      try {
+        const response = await fetch(`/api/briefing/${encodeURIComponent(id)}`);
+        const result = await response.json();
+        if (!response.ok || !result.success) throw new Error(result.error || 'Unable to open this briefing.');
+        renderBriefing(result.data);
+      } catch (err) {
+        message('Unable to open briefing', err.message);
+      }
     }
     
     function makeLink(url, text){
@@ -670,6 +750,8 @@
     
     // Navigation & Actions
     $('try-again').addEventListener('click', () => show('input-screen'));
+    $('history-button').addEventListener('click', loadHistory);
+    $('history-back').addEventListener('click', () => show('input-screen'));
     $('another-button').addEventListener('click', () => {
       $('subject').value = '';
       show('input-screen');
